@@ -1,0 +1,7 @@
+<div class="row extra-bottom-padding" ng-repeat="item in list.found">
+  <div class="col-md-2"> {{ item.name }} </div>
+  <div class="col-md-1"> {{ item.shortName }} </div>
+  <div class="col-md-6"> {{ item.description }} </div>
+  <div class="col-md-3"><button class="btn btn-primary" ng-click="list.onRemove({index: $index});">Don't want this one</button></div>
+</div>
+<div class="error" ng-transclude></div>
