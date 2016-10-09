@@ -1,7 +1,7 @@
 (function(){
-  angular.module('NarrowItDownApp',[])
-  .controller('NarrowItDownController',NarrowItDownController)
-  .service('MenuSearchService',MenuSearchService)
+  angular.module('MenuApp',[])
+  .controller('MenuAppController',MenuAppController)
+  .service('MenuAppService',MenuAppService)
   .directive('foundItems',FoundItems)
   .constant('MenuAPIPath',"https://davids-restaurant.herokuapp.com");
 
@@ -25,8 +25,8 @@
     var items = this;
   }
 
-  NarrowItDownController.$inject = ['MenuSearchService','$scope'];
-  function NarrowItDownController(MenuSearchService,$scope){
+  MenuAppController.$inject = ['MenuAppService','$scope'];
+  function MenuAppController(MenuAppService,$scope){
     var menu = this;
 
     menu.narrowItDown = function(searchTerm){
@@ -61,8 +61,8 @@
 
   }
 
-  MenuSearchService.$inject = ['$http','MenuAPIPath'];
-  function MenuSearchService($http, MenuAPIPath){
+  MenuAppService.$inject = ['$http','MenuAPIPath'];
+  function MenuAppService($http, MenuAPIPath){
     var service = this;
 
     service.getMatchedMenuItems = function(searchTerm){
