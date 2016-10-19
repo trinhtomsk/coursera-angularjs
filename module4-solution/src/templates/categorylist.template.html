@@ -1,6 +1,9 @@
-<ul>
-  <li ng-repeat="menu in $ctrl.menus"
-  ui-sref="categories.categoryDetail({category:menu.short_name})">
-    {{ menu.name }}
-  </li>
-</ul>
+<table class="table table-bordered table-hover">
+  <tbody>
+    <tr ng-repeat="menu in $ctrl.menus">
+      <td ui-sref="categories.categoryDetail({category:menu.short_name})">
+        {{ menu.name }}
+      </td>
+    </tr>
+  </tbody>
+</table>
