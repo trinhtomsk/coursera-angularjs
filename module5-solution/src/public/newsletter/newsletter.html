@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <fieldset>
+        <legend>Sign up for newsletter</legend>
+        <form name='regForm' role="form" novalidate>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <input class="form-control  input-lg" type="text" name="firstname" placeholder="Firstname"
+              ng-model="newsletterCtrl.firstname"
+              required>
+              {{ newsLetterCtrl.firstname }}
+              <span ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+                Firstname must not be empty.
+              </span>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <input class="form-control  input-lg" type="text" name="lastname" placeholder="Lastname"
+              ng-model="newsletterCtrl.lastname"
+              required>
+              {{ newsLetterCtrl.lastname }}
+              <span ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+                Lastname must not be empty.
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <input class="form-control input-lg" type="email" name="email" placeholder="Email"
+            ng-model="newsletterCtrl.email"
+            required>
+            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+              Must be a valid email address: handle@domain format
+            </span>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <input class="form-control input-lg" type="text" name="phone" placeholder="Phone ###-###-####"
+              ng-model="newsletterCtrl.phone"
+              pattern="(\d{3})-(\d{3})-(\d{4})"
+              required>
+              <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                Phone must be in the format ###-###-####.
+              </span>
+            </div>
+
+        </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <input class="form-control input-lg" type="text" name="preference" placeholder="Your favorite dish"
+              ng-model="newsletterCtrl.preference" ng-blur="newsletterCtrl.validatePreference();">(Menu number only)
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <span>
+                {{ newsletterCtrl.errorMessage}}
+              </span>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <input ng-disabled="regForm.$invalid || newsletterCtrl.errorMessage.length !=0"
+              type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"
+              ng-click="newsletterCtrl.saveInfo();">
+              <span class="successMsg">
+                {{ newsletterCtrl.infoMessage }}
+              </span>
+            </div>
+          </div>
+          <div style="margin-top: 10px;">
+            Form valide? {{regForm.$valid}}
+          </div>
+
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>

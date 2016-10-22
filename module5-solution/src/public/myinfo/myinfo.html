@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <!-- <fieldset> -->
+          <div ng-hide="myInfoCtrl.userInfo">
+            Not Signed Up Yet!
+          <a ui-sref="public.newsletter">Sign up now!</a>
+        </div>
+
+
+      <!-- </fieldset> -->
+    </div>
+  </div>
+  <my-info user-info="myInfoCtrl.userInfo" menu-item="myInfoCtrl.menuItem" ng-show="myInfoCtrl.userInfo"></my-info>
+</div>

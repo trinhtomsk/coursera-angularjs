@@ -9,6 +9,15 @@ body {
   margin-top: 60px;
 }
 
+legend {
+  color: green;
+}
+
+input {
+  color: green;
+  background-color: bisque;
+}
+
 /** HEADER **/
 #header-nav {
   background-color: #f6b319;
