@@ -32,17 +32,18 @@
       return $http.get(ApiPath + '/menu_items/' + item.toUpperCase() + ".json").then(function (response){
         return response.data;
       });
-
     };
 
-    service.saveUserInfo = function(firstname, lastname, email, telephone, favoriteDish){
-      $q.all([firstname, lastname, email, telephone, favoriteDish])
+
+
+    service.saveUserInfo = function(firstname, lastname, email, phone, favoriteDish){
+      $q.all([firstname, lastname, email, phone, favoriteDish])
       .then(function(response){
          userInfo = {
           "firstname": firstname,
           "lastname": lastname,
           "email": email,
-          "telephone": telephone,
+          "phone": phone,
           "favoriteDish": favoriteDish
         };
         // userInfo.push(item);
